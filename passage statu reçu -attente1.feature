@@ -1,23 +1,26 @@
-Fonctionnalité: Changement de statut
+Feature: Status change
   
-  Scénario: dossier en attente
-     le dossier est reçu
-     après vingt quatre heures
-     dossier en attente de traitement
+  Scénario: Pending file
+    Given the file is received
+    When after twenty four hours
+    Then file awaiting processing
+
     
-  Scénario: Analyse du dossier
-    le dossier est en attente 
-    l'intervention de l'analyste se fait
-    l'analyste traite le dossier
+  Scénario: File analysis
+   Given The file is pending
+   When the analyst's intervention takes place
+   Then the analyst processes the dossier
+   
     
-  Scénario: Dossier complet
-    le dossier a été traité 
-    c'est réussi
-    la réponse est donnée
-    le client est notifié que son dossier est complet
+  Scénario: Complete file 
+   Given the file has been processed
+   And it's a successe
+   When The answer is Given 
+   Then The customer is notified that his file is complete
     
-  Scénario: Dossier incomplet
-    le dosiier a été traité
-    manque des documents
-    la réponse est donée
-    le client est notifié qu'i doit renseigner de nouveaux documents
+  Scénario: incomplete file
+    Given The file is not complete
+    And missing the documents
+    When The answer is given
+    Then the customer is notified, fill in new documents
+    
